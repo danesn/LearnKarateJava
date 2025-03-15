@@ -1,4 +1,4 @@
-@Read
+@Regression
 Feature: Test for the home page
 
     Background: Define URL

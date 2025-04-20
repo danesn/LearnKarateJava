@@ -5,15 +5,18 @@ function fn() {
     env = 'dev';
   }
   var config = {
-    env: env,
-    myVarName: 'someValue'
-    
+    apiUrl: 'https://conduit-api.bondaracademy.com/api/'
   }
+
+  // Environment
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    config.userEmail = 'bonkai@bonk.com';
+    config.userPassword = 'bonkaibonkai998';
   }
+  if (env == 'qa') {
+    config.userEmail = 'bonkai2@bonk.com';
+    config.userPassword = 'bonkaibonkai999';
+  }
+  
   return config;
 }

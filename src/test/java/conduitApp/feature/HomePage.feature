@@ -1,4 +1,4 @@
-@Regression
+@Debug
 Feature: Test for the home page
 
     Background: Define URL
@@ -10,6 +10,7 @@ Feature: Test for the home page
         When method Get
         Then status 200
         And match response.tags contains ['GitHub', 'Git']
+        And match response.tags contains any ['noway', 'asdasdsad', 'Exam']
         And match response.tags !contains ['Popo']
         And match response.tags == '#array'
         And match each response.tags == '#string'
@@ -22,5 +23,7 @@ Feature: Test for the home page
         And match response.articles == '#array'
         And match response.articles == '#[10]'
         And match response.articlesCount == 10
-
-    
+        And match response.articles[0].createdAt contains '2024'
+        And match response.articles[*].favoritesCount contains 21
+        And match response..bio contains null
+        And match each response..following == false

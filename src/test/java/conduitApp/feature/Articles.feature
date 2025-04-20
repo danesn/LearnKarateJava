@@ -17,7 +17,6 @@ Feature: Articles
         And match response.article.tagList == '#[1]'
         And match response.article.tagList contains ['tags6']
     
-    @debug
     Scenario: Create and Delete article
         And path 'articles'
         And request {"article": {"title": "bonkai164","description": "about6","body": "markdown6","tagList": ["tags6"]}}

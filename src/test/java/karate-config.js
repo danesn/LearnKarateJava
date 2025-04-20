@@ -18,6 +18,7 @@ function fn() {
     config.userPassword = 'bonkaibonkai999';
   }
 
+  // Set Header
   var accessToken = karate.callSingle('classpath:helpers/CreateToken.feature', config).authToken
   karate.configure('headers',
     {

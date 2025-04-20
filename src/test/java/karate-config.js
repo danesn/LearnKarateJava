@@ -17,6 +17,13 @@ function fn() {
     config.userEmail = 'bonkai2@bonk.com';
     config.userPassword = 'bonkaibonkai999';
   }
+
+  var accessToken = karate.callSingle('classpath:helpers/CreateToken.feature', config).authToken
+  karate.configure('headers',
+    {
+      Authorization: 'Token ' + accessToken
+    }
+  )
   
   return config;
 }

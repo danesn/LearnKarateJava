@@ -3,6 +3,7 @@ Feature: Test for the home page
 
     Background: Define URL
         Given url apiUrl
+        * configure headers = { } // Remove Global Set Auth Token
 
     Scenario: Get all tags
         Given path 'tags'

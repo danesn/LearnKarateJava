@@ -27,3 +27,6 @@ Feature: Test for the home page
         And match response.articles[*].favoritesCount contains 21
         And match response..bio contains null
         And match each response..following == false
+        And match each response..following == '#boolean'
+        And match each response..favoritesCount == '#number'
+        And match each response..bio == '##string' // Double hash, null OR string
